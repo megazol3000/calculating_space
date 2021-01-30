@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Расчет места хранения</title>
+	<link rel="stylesheet" href="style/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<script src="js/script.js"></script>
+</head>
+<body>
+
+	<header> 
+		<div class="header-wrap">
+			<h1>Расчёт места хранения</h1>
+		</div> 
+	</header>
+	<main>
+		
+		<div class="form-wrap">
+			<div class="form">
+				<div class="box-size">
+					<div>
+					<h4>Ширина коробки (м)</h4>
+					<input id="weight" type="number" value="1">
+					</div>
+					<div>
+					<h4>Длина коробки (м)</h4>
+					<input id="length" type="number" value="1">
+					</div>
+					<div>
+					<h4>Высота коробки (м)</h4>
+					<input id="height" type="number" value="1">
+					</div>
+				</div>
+				<div class="vertical-storage">
+					<h4>Вертикальное количество коробок (если нельзя ставить друг на друга, то оставьте 1)</h4>
+					<input id="vertical" type="range" value="1" step="1" min="1" max="14" list="rangeList" onchange="document.getElementById('rangeValue').innerHTML = this.value;">
+						<datalist id="rangeList">
+							<option value="1" label="1">
+							<option value="2" label="2">
+							<option value="3" label="3">
+							<option value="4" label="4">
+							<option value="5" label="5">
+							<option value="6" label="6">
+							<option value="7" label="7">
+							<option value="8" label="8">
+							<option value="9" label="9">
+							<option value="10" label="10">
+							<option value="11" label="11">
+							<option value="12" label="12">
+							<option value="13" label="13">
+							<option value="14" label="14">
+						</datalist>
+					<span id="rangeValue">1</span>
+				</div>
+				<div class="quantity">
+					<h4>Количество коробок</h4>
+					<input id="quantity" type="number" min="1" list="num" value="1">
+				</div>
+			</div>
+
+			<button onclick="raschitat()">Рассчитать место</button>
+
+			<div class="answer">
+				<div id="space"></div>
+			</div>
+		</div>
+
+	</main>
+	<footer></footer>
+</body>
+</html>
